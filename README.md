@@ -2,6 +2,7 @@ Hi there, I'm Vitali Turkin! 👋
 Frontend Web Developer
   
 About Me
+
 💻 I create dynamic, responsive, and user-friendly web applications. 
 
 🚀 I enjoy solving challenging tasks and learning new technologies.
