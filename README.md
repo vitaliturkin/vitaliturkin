@@ -6,6 +6,6 @@ About Me
 
 🚀 I enjoy solving challenging tasks and learning new technologies.
 
-🌱 I’m stydying BSc (Hons) Web Design & Development at Edinburgh Napier University.
+🌱 I’m studying BSc (Hons) Web Design & Development at Edinburgh Napier University.
 
 💡 Passionate about UX/UI and AI technologies.
