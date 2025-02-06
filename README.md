@@ -1,4 +1,4 @@
-Hi there, I'm Vitali Turkin! 👋
+Hiya there, I'm Vitali Turkin! 👋
 Frontend Web Developer
   
 About Me
