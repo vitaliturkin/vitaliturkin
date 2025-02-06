@@ -8,4 +8,4 @@ About Me
 
 🌱 I’m learning BSc (Hons) Web Design & Development at Edinburgh Napier University.
 
-💡 Passionate about UX/UI and AI technogies.
+💡 Passionate about UX/UI and AI technologies.
