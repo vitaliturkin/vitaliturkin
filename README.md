@@ -2,7 +2,7 @@ Hiya there, I'm Vitali Turkin! 👋
 
 Frontend Web Developer
 
-Base in Edinburgh, Scotland
+Based in Edinburgh, Scotland
   
 About Me
 
