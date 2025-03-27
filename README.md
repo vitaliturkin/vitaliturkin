@@ -14,4 +14,4 @@ About Me
 
 💡 Passionate about UX/UI and AI technologies.
 
-Check Prtfolio Website - https://vitaliturkin.github.io/vitaliturkin/
+Check Portfolio Website - https://vitaliturkin.github.io/vitaliturkin/
