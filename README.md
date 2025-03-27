@@ -13,3 +13,5 @@ About Me
 🌱 I’m studying BSc (Hons) Web Design & Development at Edinburgh Napier University.
 
 💡 Passionate about UX/UI and AI technologies.
+
+Check Prtfolio Website - https://vitaliturkin.github.io/vitaliturkin/
