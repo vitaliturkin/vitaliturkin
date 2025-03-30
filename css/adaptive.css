@@ -264,6 +264,12 @@
     }
 }
 
+@media screen and (max-width: 700px){
+    .modal-popup-pic{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     :root {
         --multiplier: .9375;
@@ -316,6 +322,10 @@
         top   : calc(var(--vspace-0_25) * -1);
         right : calc(6vw + var(--gutter));
     }
+
+    .modal-popup-pic{
+        height: 271px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -346,6 +356,18 @@
     }
     .folio-list__item-link {
         padding-left : calc(4.25 * var(--space));
+    }
+    .modal-popup h5 {
+        font-size: 15px;
+    }
+    .modal-popup__desc p {
+        font-size: 12px;
+    }
+    .modal-popup__cat li {
+        font-size: 14px;
+    }
+    .modal-popup-pic{
+        height: 217px;
     }
 }
 
@@ -383,6 +405,9 @@
         padding : 0 var(--vspace-1) var(--vspace-0_25);
     }
 
+    .modal-popup-pic{
+        height: 173px;
+    }
     .ss-go-top {
         right : 6vw;
     }

@@ -10,45 +10,39 @@ $(document).ready(function () {
     const $sections      = $('.target-section');
     const $folioLinks    = $('.folio-list__item-link');
     const $swiperContainer = $('.s-testimonials__slider');
-    const $alertBoxes    = $('.alert-box');
-    const $triggers      = $('.smoothscroll');
 
-    /*=============================================
-    =            1. Preloader                     =
-    =============================================*/
+    /* preloader */
     if ($preloader.length) {
-        // Adding "ss-preload" class to <html>
+        // adding "ss-preload" class to <html>
         $htmlEl.addClass('ss-preload');
 
-        // When the entire page has finished loading...
+        // when the entire page has finished loading...
         $(window).on('load', function () {
-            // Remove "ss-preload" and add "ss-loaded" on <html>
+            // removing "ss-preload" and add "ss-loaded" on <html>
             $htmlEl.removeClass('ss-preload').addClass('ss-loaded');
 
-            // Listen for transitionend event on #preloader
+            // listening for transitionend event on #preloader
             $preloader.on('transitionend', function (e) {
                 if ($(e.target).is($preloader)) {
                     $siteBody.addClass('ss-show');
                     $preloader.hide();
-                    // Unbind this transitionend event if it should only fire once
+                    // unbind this transitionend event if it should only fire once
                     $preloader.off(e.type);
                 }
             });
         });
     }
 
-    /*=============================================
-    =    2. Move Header on Scroll                 =
-    =============================================*/
+    /* move Header on Scroll */
     if ($header.length && $intro.length) {
         let triggerHeight;
 
-        // Slight delaying so #intro is fully loaded and height is accurate
+        // slight delaying so #intro is fully loaded and height is accurate
         setTimeout(function () {
             triggerHeight = $intro.outerHeight() - 170;
         }, 300);
 
-        // Updating header classes on scroll
+        // updating header classes on scroll
         $(window).on('scroll', function () {
             const scrollPos = $(window).scrollTop();
 
@@ -72,18 +66,16 @@ $(document).ready(function () {
         });
     }
 
-    /*=============================================
-    =       3. Mobile Menu Toggle                =
-    =============================================*/
+    /* Mobile Menu Toggle */
     if ($toggleButton.length && $mainNavWrap.length) {
-        // Toggling mobile menu
+        // toggling mobile menu
         $toggleButton.on('click', function (e) {
             e.preventDefault();
             $toggleButton.toggleClass('is-clicked');
             $siteBody.toggleClass('menu-is-open');
         });
 
-        // Closing menu when clicking a link on mobile
+        // closing menu when clicking a link on mobile
         $mainNavWrap.find('a').on('click', function () {
             if (window.matchMedia('(max-width: 900px)').matches) {
                 $toggleButton.toggleClass('is-clicked');
@@ -91,7 +83,7 @@ $(document).ready(function () {
             }
         });
 
-        // Resetting open menu if window resizes above 900px
+        // resetting open menu if window resizes above 900px
         $(window).on('resize', function () {
             if (window.matchMedia('(min-width: 901px)').matches) {
                 if ($siteBody.hasClass('menu-is-open')) {
@@ -104,9 +96,7 @@ $(document).ready(function () {
         });
     }
 
-    /*=============================================
-    =  4. Highlight Active Menu Link on Scroll    =
-    =============================================*/
+    /* Highlight Active Menu Link on Scroll */
     if ($sections.length) {
         const onScroll = function () {
             const scrollY = $(window).scrollTop();
@@ -126,17 +116,15 @@ $(document).ready(function () {
             });
         };
 
-        // Attach scroll handler
+        // attaching scroll handler
         $(window).on('scroll', onScroll);
     }
 
-    /*=============================================
-    =         5. Lightbox for Folio Items         =
-    =============================================*/
+    /* Lightbox for Folio Items */
     if ($folioLinks.length) {
         const modals = [];
 
-        // Creating and storing each basicLightbox instance
+        // creating and storing each basicLightbox instance
         $folioLinks.each(function () {
             const $link          = $(this);
             const modalSelector  = $link.attr('href'); // e.g. "#modal-01"
@@ -146,7 +134,7 @@ $(document).ready(function () {
 
             const instance = basicLightbox.create(modalContentEl, {
                 onShow: (inst) => {
-                    // Attach ESC key listener when lightbox is shown
+                    // attaching ESC key listener when lightbox is shown
                     $(document).on('keydown.lightbox', function (evt) {
                         if (evt.key === 'Escape') {
                             inst.close();
@@ -154,7 +142,7 @@ $(document).ready(function () {
                     });
                 },
                 onClose: () => {
-                    // Cleanup ESC listener when lightbox is closed
+                    // cleanup ESC listener when lightbox is closed
                     $(document).off('keydown.lightbox');
                 }
             });
@@ -162,7 +150,7 @@ $(document).ready(function () {
             modals.push(instance);
         });
 
-        // Showing the matching lightbox on click
+        // showing the matching lightbox on click
         $folioLinks.on('click', function (e) {
             e.preventDefault();
             const index = $folioLinks.index(this);
@@ -170,9 +158,7 @@ $(document).ready(function () {
         });
     }
 
-    /*=============================================
-    =         6. Swiper Initialization           =
-    =============================================*/
+    /* Swiper Initialization */
     if ($swiperContainer.length) {
         new Swiper($swiperContainer[0], {
             slidesPerView: 1,
@@ -194,27 +180,6 @@ $(document).ready(function () {
                     spaceBetween: 48
                 }
             }
-        });
-    }
-
-    /*=============================================
-    =     7. Alert Boxes (Close on Click)        =
-    =============================================*/
-    if ($alertBoxes.length) {
-        $alertBoxes.each(function() {
-            const $thisBox = $(this);
-
-            $thisBox.on('click', function(e) {
-                // Checking if click happened on the .alert-box__close element
-                if ($(e.target).is('.alert-box__close')) {
-                    e.stopPropagation();
-                    $thisBox.addClass('hideit');
-
-                    setTimeout(function() {
-                        $thisBox.hide();
-                    }, 500);
-                }
-            });
         });
     }
 });
